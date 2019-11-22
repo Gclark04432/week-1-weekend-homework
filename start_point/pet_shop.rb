@@ -44,7 +44,7 @@ end
 def remove_pet_by_name(shop, pet_name)
   for pet in shop[:pets]
     if pet[:name] == pet_name
-    pet.shift()
+      pet.shift()
     end
   end
 end
@@ -67,4 +67,8 @@ end
 
 def add_pet_to_customer(customer, new_pet)
   customer[:pets].push(new_pet)
+end
+
+def customer_can_afford_pet(customer, new_pet)
+    customer[:cash] >= new_pet[:price] ? true : false
 end
